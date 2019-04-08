@@ -5,10 +5,25 @@
     android:orientation="vertical"
     android:padding="10dp">
 
+    <EditText
+        android:id="@+id/et_number1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/number1"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/et_number2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/number2"
+        android:inputType="number" />
+
     <Button
         android:id="@+id/bt_start_service"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:onClick="Click_Start_service"
         android:text="@string/star_service"
         android:textAllCaps="false" />
@@ -20,6 +35,14 @@
         android:onClick="Click_Stop_service"
         android:text="@string/stop_service"
         android:textAllCaps="false" />
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textSize="20sp" />
 
 
 </LinearLayout>
