@@ -4,4 +4,6 @@
     <string name="stop_service">StopService</string>
     <string name="number1">Please enter a number</string>
     <string name="number2">Please enter another number</string>
+    <string name="start_broadcast">StartBroadcastClick_open_music</string>
+    <string name="click_start_broadcast_close_music">Click_Start_broadcast_close_music</string>
 </resources>

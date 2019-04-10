@@ -1,13 +1,13 @@
 package top.qvisa.servicedemo;
 
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private EditText mEditText_number1;
@@ -23,6 +23,15 @@ public class MainActivity extends AppCompatActivity {
         mEditText_number1 = findViewById(R.id.et_number1);
         mEditText_number2 = findViewById(R.id.et_number2);
         mTextView_result = findViewById(R.id.tv_result);
+
+        MyReceiver_open_music myReceiver_open_music = new MyReceiver_open_music();
+        IntentFilter intentFilter_open_music = new IntentFilter("open_music");
+        registerReceiver(myReceiver_open_music,intentFilter_open_music);
+
+        MyReceiver_close_music myReceiver_close_music = new MyReceiver_close_music();
+        IntentFilter intentFilter_close_music = new IntentFilter("close_music");
+        registerReceiver(myReceiver_close_music,intentFilter_close_music);
+
     }
 
     public void Click_Start_service(View view) {
@@ -47,10 +56,26 @@ public class MainActivity extends AppCompatActivity {
         stopService(intent);
     }
 
-    public static void Update(int result) {
-        mTextView_result.setText("最大的数是 >>>>  " + result);
+    public void Click_Start_broadcast_open_music(View view) {
+        Intent intent  = new Intent();
+        intent.setAction("open_music");
+        sendBroadcast(intent);
+    }
+
+    public void Click_Start_broadcast_close_music(View view){
+        Intent intent  = new Intent();
+        intent.setAction("close_music");
+        sendBroadcast(intent);
+    }
+
+
+
+    public static void Update(String result) {
+        mTextView_result.setText(result);
         mTextView_result.setTextColor(Color.BLACK);
     }
+
+
 
 
 }

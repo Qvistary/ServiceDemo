@@ -29,7 +29,7 @@ public class MyService extends Service {
         a = intent.getIntExtra("a", 0);
         b = intent.getIntExtra("b", 0);
         result = Compare(a, b);
-        MainActivity.Update(result);
+        MainActivity.Update("最大的数是 >>>>  " + result);
         return super.onStartCommand(intent, flags, startId);
     }
 
